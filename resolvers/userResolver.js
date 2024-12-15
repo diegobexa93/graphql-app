@@ -1,14 +1,20 @@
-const users = []; // In-memory data for simplicity
-let idCounter = 1;
+const User = require("../models/userModel");
 
 const userResolver = {
-  getUser: ({ id }) => {
-    return users.find((user) => user.id === parseInt(id));
+  getUser: async ({ id }) => {
+    return await User.findById(id);
   },
-  createUser: ({ name, email }) => {
-    const newUser = { id: idCounter++, name, email };
-    users.push(newUser);
+  getUsers: async () => {
+    return await User.find();
+  },
+  createUser: async ({ name, email }) => {
+    const newUser = new User({ name, email });
+    await newUser.save();
     return newUser;
+  },
+  deleteUser: async ({ id }) => {
+    await User.findByIdAndDelete(id);
+    return "User deleted successfully.";
   },
 };
 

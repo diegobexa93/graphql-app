@@ -10,10 +10,12 @@ const userSchema = buildSchema(`
 
   type Query {
     getUser(id: ID!): User
+    getUsers: [User]
   }
 
   type Mutation {
     createUser(name: String!, email: String!): User
+    deleteUser(id: ID!): String
   }
 `);
 
