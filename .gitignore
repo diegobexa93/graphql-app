@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# Compiled binary addons
+build/Release
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.sw?
+
+# npm cache
+npm-cache/
