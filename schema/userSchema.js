@@ -5,6 +5,7 @@ const userSchema = buildSchema(`
     id: ID!
     name: String
     email: String
+    city: String
   }
 
   type Query {
